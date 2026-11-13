@@ -1,55 +1,537 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Arpan Dutta</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Immediate Theme Initializer (Prevents Flash of Wrong Theme) -->
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <!-- Primary Meta Tags -->
+  <title>Arpan Dutta | Computer Science Engineering Student & Aspiring Software Engineer</title>
+  <meta name="title" content="Arpan Dutta | Computer Science Engineering Student & Aspiring Software Engineer">
+  <meta name="description" content="Personal engineering portfolio of Arpan Dutta — B.Tech Computer Science and Engineering student at Netaji Subhash Engineering College (NSEC), Kolkata. Exploring software engineering, AI/ML, and systems technology.">
+  <meta name="author" content="Arpan Dutta">
+  <meta name="keywords" content="Arpan Dutta, Netaji Subhash Engineering College, NSEC, Software Engineer, Portfolio, Machine Learning, Python, C++, Web Development, Drone Simulation">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arpandutta30.github.io/portfolio/">
+  <meta property="og:title" content="Arpan Dutta | Engineering Portfolio">
+  <meta property="og:description" content="Explore Arpan Dutta's engineering journey, technical competencies, featured projects, certifications, and experience.">
+
+  <!-- Typography & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Arpan Dutta</h1>
-    <p>Computer Science Engineering Student | Aspiring Developer</p>
+
+  <!-- Sticky Header (5 Navigation Links Only) -->
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo" aria-label="Arpan Dutta Portfolio Home">
+        <span>Arpan Dutta</span>
+        <span class="brand-tag">&lt;dev /&gt;</span>
+      </a>
+
+      <!-- 5-Link Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Theme Switcher & Mobile Menu Toggle -->
+      <div class="nav-controls">
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+
+        <button id="mobile-menu-btn" class="mobile-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <i class="fa-solid fa-bars" id="menu-icon"></i>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="my-hobbies.html">Hobbies</a>
-    <a href="contact-me.html">Contact</a>
-  </nav>
+  <main>
+    <!-- 1. Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="hero-status-pill">
+          <span class="pulse-dot"></span> Open to Internships & Software Opportunities
+        </div>
+        <h1 class="hero-name">Arpan Dutta</h1>
+        <p class="hero-headline">
+          Computer Science Engineering Student | Aspiring Software Engineer | AI/ML Enthusiast
+        </p>
+        <p class="hero-bio">
+          Undergraduate at <strong>Netaji Subhash Engineering College (NSEC)</strong>, Kolkata. Passionate about software engineering, artificial intelligence, and building practical, reliable solutions to real-world problems.
+        </p>
 
-  <main class="container">
+        <div class="btn-group">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fa-solid fa-code-fork"></i> View Projects
+          </a>
+          <a href="#about" class="btn btn-outline">
+            <i class="fa-solid fa-user"></i> About Me
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fa-solid fa-paper-plane"></i> Contact
+          </a>
+          <a href="./assets/docs/resume.pdf" class="btn btn-outline" target="_blank" rel="noopener noreferrer" title="View / Download Resume">
+            <i class="fa-solid fa-file-arrow-down"></i> Resume
+          </a>
+        </div>
 
-    <section class="card">
-      <h2><i class="fa-solid fa-user"></i> About Me</h2>
-      <p>Hello, I'm <strong>Arpan Dutta</strong> from Jharkhand, India. I am pursuing Computer Science Engineering at CIEM, Kolkata. I’m passionate about coding, problem-solving, and building projects that bring ideas to reality.</p>
+        <div class="hero-socials">
+          <a href="https://github.com/arpandutta30" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="GitHub Profile">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/arpandutta30/" target="_blank" rel="noopener noreferrer" class="social-link-btn" aria-label="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+          </a>
+          <a href="mailto:arpandutta30@gmail.com" class="social-link-btn" aria-label="Direct Email">
+            <i class="fa-solid fa-envelope"></i> Email
+          </a>
+        </div>
+      </div>
     </section>
 
+    <!-- 2. About Section (Integrated Bio, Experience, Education & Certifications) -->
+    <section id="about" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-user"></i> Profile</span>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-desc">Background, academic journey, professional experience, and technical certifications.</p>
+        </div>
 
-    <section class="card">
-      <h2><i class="fa-solid fa-code"></i> Skills</h2>
-      <ul class="skills">
-        <li>HTML5</li>
-        <li>CSS</li>
-        <li>C</li>
-        <li>C++</li>
-        <li>Python</li>
-        <li>Git & GitHub</li>
-      </ul>
+        <!-- Concise Biography -->
+        <div class="about-bio-text">
+          <p>
+            I'm <strong>Arpan Dutta</strong>, a Computer Science & Engineering undergraduate at <strong>Netaji Subhash Engineering College (NSEC)</strong>, Kolkata (August 2024 – June 2028), originally from Jharkhand, India. I am passionate about software development, machine learning, cybersecurity, and emerging technologies.
+          </p>
+          <p>
+            I enjoy exploring how systems work under the hood, writing clean and maintainable code, and applying theoretical concepts to practical engineering scenarios through academic coursework, project-based learning, and hackathon participation.
+          </p>
+        </div>
+
+        <!-- Integrated Experience & Education Subsections -->
+        <div class="about-subsections">
+          <!-- Professional Experience Block -->
+          <div class="about-block">
+            <h3 class="block-title">
+              <i class="fa-solid fa-briefcase"></i> Professional Experience
+            </h3>
+            <div class="mini-timeline-item">
+              <div class="mini-timeline-dot"></div>
+              <div class="mini-timeline-header">
+                <span class="mini-timeline-role">Student Intern – Machine Learning</span>
+                <span class="mini-timeline-date">Sep 2025 – Oct 2025</span>
+              </div>
+              <div class="mini-timeline-org">Skill Ladders</div>
+              <p class="mini-timeline-desc">
+                Completed a student internship focused on Machine Learning skill development. Studied machine learning algorithms, explored data-driven techniques, and applied theoretical knowledge to practical, project-based scenarios.
+              </p>
+            </div>
+          </div>
+
+          <!-- Academic Background Block -->
+          <div class="about-block">
+            <h3 class="block-title">
+              <i class="fa-solid fa-graduation-cap"></i> Academic Background
+            </h3>
+            <div class="mini-timeline-item">
+              <div class="mini-timeline-dot"></div>
+              <div class="mini-timeline-header">
+                <span class="mini-timeline-role">B.Tech in Computer Science & Engineering</span>
+                <span class="mini-timeline-date">2024 – 2028</span>
+              </div>
+              <div class="mini-timeline-org">Netaji Subhash Engineering College (NSEC), Kolkata</div>
+              <p class="mini-timeline-desc">
+                Core coursework in algorithms, data structures, programming fundamentals, and software systems.
+              </p>
+            </div>
+
+            <div class="mini-timeline-item">
+              <div class="mini-timeline-dot"></div>
+              <div class="mini-timeline-header">
+                <span class="mini-timeline-role">Higher Secondary Education (Science)</span>
+                <span class="mini-timeline-date">Completed</span>
+              </div>
+              <div class="mini-timeline-org">St. Xavier's Inter College</div>
+              <p class="mini-timeline-desc">Coursework in Physics, Chemistry, and Mathematics.</p>
+            </div>
+
+            <div class="mini-timeline-item">
+              <div class="mini-timeline-dot"></div>
+              <div class="mini-timeline-header">
+                <span class="mini-timeline-role">Secondary School Certificate</span>
+                <span class="mini-timeline-date">Completed</span>
+              </div>
+              <div class="mini-timeline-org">St. Viveka English Medium School</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compact Certifications Subsection -->
+        <div class="cert-compact-section">
+          <h3 class="block-title">
+            <i class="fa-solid fa-certificate"></i> Certifications & Learning
+          </h3>
+          <div class="cert-compact-grid">
+            <div class="cert-compact-card">
+              <div class="cert-compact-issuer">Kaggle / Google</div>
+              <h4 class="cert-compact-title">5-Day AI Agents Intensive Course with Google</h4>
+              <p class="cert-compact-desc">Explored autonomous AI agent architectures, tool-use integration, and reasoning workflows.</p>
+            </div>
+
+            <div class="cert-compact-card">
+              <div class="cert-compact-issuer">Skill Ladders</div>
+              <h4 class="cert-compact-title">Artificial Intelligence and Machine Learning</h4>
+              <p class="cert-compact-desc">Practical machine learning fundamentals, supervised learning models, and Python data analysis.</p>
+            </div>
+
+            <div class="cert-compact-card">
+              <div class="cert-compact-issuer">Tata (Job Simulation)</div>
+              <h4 class="cert-compact-title">Cybersecurity Analyst Job Simulation</h4>
+              <p class="cert-compact-desc">Simulation covering security operations, threat identification, and vulnerability assessment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- 3. Technical Skills Section (4 Clean Categories Only) -->
+    <section id="skills" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-code"></i> Competencies</span>
+          <h2 class="section-title">Technical Skills</h2>
+          <p class="section-desc">Focused technical capabilities grouped into four core engineering domains.</p>
+        </div>
 
-    <section class="card">
-      <h2><i class="fa-solid fa-location-dot"></i> Location</h2>
-      <p>Kolkata, India</p>
+        <div class="skills-grid-4">
+          <!-- Category 1: Programming -->
+          <div class="skill-box">
+            <h3 class="skill-box-title">
+              <i class="fa-solid fa-terminal"></i> Programming
+            </h3>
+            <div class="skill-pill-list">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">C</span>
+              <span class="skill-pill">C++</span>
+              <span class="skill-pill">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Web Development -->
+          <div class="skill-box">
+            <h3 class="skill-box-title">
+              <i class="fa-solid fa-globe"></i> Web Development
+            </h3>
+            <div class="skill-pill-list">
+              <span class="skill-pill">HTML5</span>
+              <span class="skill-pill">CSS3</span>
+              <span class="skill-pill">Responsive Web Design</span>
+              <span class="skill-pill">REST API Fundamentals</span>
+            </div>
+          </div>
+
+          <!-- Category 3: AI & Machine Learning -->
+          <div class="skill-box">
+            <h3 class="skill-box-title">
+              <i class="fa-solid fa-brain"></i> AI & Machine Learning
+            </h3>
+            <div class="skill-pill-list">
+              <span class="skill-pill">Machine Learning Fundamentals</span>
+              <span class="skill-pill">Python for ML</span>
+              <span class="skill-pill">AI Concepts</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Systems & Tools -->
+          <div class="skill-box">
+            <h3 class="skill-box-title">
+              <i class="fa-solid fa-screwdriver-wrench"></i> Systems & Tools
+            </h3>
+            <div class="skill-pill-list">
+              <span class="skill-pill">Git & GitHub</span>
+              <span class="skill-pill">Linux Fundamentals</span>
+              <span class="skill-pill">Ubuntu & Kali Linux</span>
+              <span class="skill-pill">VirtualBox & WSL</span>
+              <span class="skill-pill">SQLite</span>
+              <span class="skill-pill">Basic Networking</span>
+              <span class="skill-pill">Foundational Cybersecurity</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- 4. Featured Projects & Achievements Section -->
+    <section id="projects" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-diagram-project"></i> Portfolio</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-desc">Practical engineering implementations, simulation prototypes, and software tools.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Drone Swarm Simulation -->
+          <article class="project-card">
+            <div>
+              <div class="project-top-row">
+                <span class="project-category-badge">Simulation</span>
+                <span class="project-award-badge">
+                  <i class="fa-solid fa-trophy"></i> Second Prize – Hackathon
+                </span>
+              </div>
+              <h3 class="project-title">Autonomous Drone Swarm Simulation</h3>
+              <p class="project-desc">
+                A virtual drone simulation project exploring AI-assisted autonomous drone swarm coordination for disaster relief operations.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Unreal Engine</span>
+                <span class="project-tag">AirSim</span>
+                <span class="project-tag">PX4</span>
+                <span class="project-tag">Autonomous Systems</span>
+                <span class="project-tag">Simulation</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/arpandutta30" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-brands fa-github"></i> Repository / Overview
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: HeatShield -->
+          <article class="project-card">
+            <div>
+              <div class="project-top-row">
+                <span class="project-category-badge">Environmental API</span>
+              </div>
+              <h3 class="project-title">HeatShield</h3>
+              <p class="project-desc">
+                A heatwave monitoring and risk-awareness solution designed around localized environmental data and heat-risk analysis.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">Open-Meteo API</span>
+                <span class="project-tag">GeoJSON</span>
+                <span class="project-tag">Data Analysis</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/arpandutta30" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Biometric Payment System -->
+          <article class="project-card">
+            <div>
+              <div class="project-top-row">
+                <span class="project-category-badge">Hardware & Systems</span>
+              </div>
+              <h3 class="project-title">Biometric Payment System</h3>
+              <p class="project-desc">
+                A biometric authentication and payment prototype interfacing physical hardware with a local database management system.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Tkinter</span>
+                <span class="project-tag">SQLite</span>
+                <span class="project-tag">R307S Sensor</span>
+                <span class="project-tag">Serial Comm</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/arpandutta30" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-brands fa-github"></i> Repository
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: Personal Developer Portfolio -->
+          <article class="project-card">
+            <div>
+              <div class="project-top-row">
+                <span class="project-category-badge">Web Engineering</span>
+              </div>
+              <h3 class="project-title">Personal Developer Portfolio</h3>
+              <p class="project-desc">
+                A clean, responsive personal portfolio built with semantic HTML5, modern CSS tokens, and static GitHub Pages hosting.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">HTML5</span>
+                <span class="project-tag">CSS3</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">Git</span>
+                <span class="project-tag">GitHub Pages</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/arpandutta30/portfolio" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-brands fa-github"></i> Source Code
+              </a>
+              <a href="#home" class="btn btn-outline btn-sm">
+                <i class="fa-solid fa-eye"></i> Current Site
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5: Insta Class -->
+          <article class="project-card">
+            <div>
+              <div class="project-top-row">
+                <span class="project-category-badge">EdTech Concept</span>
+              </div>
+              <h3 class="project-title">Insta Class</h3>
+              <p class="project-desc">
+                A real-time online tutoring platform concept designed to support interactive learning, communication, and dynamic resource access.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Web Concepts</span>
+                <span class="project-tag">Real-time Architecture</span>
+                <span class="project-tag">UI/UX</span>
+                <span class="project-tag">Interactive Learning</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/arpandutta30" target="_blank" rel="noopener noreferrer" class="project-link">
+                <i class="fa-brands fa-github"></i> Concept Overview
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Integrated Achievement Callout -->
+        <div class="achievement-callout">
+          <div class="achievement-icon">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="achievement-details">
+            <h4>Hackathon – Second Prize</h4>
+            <p>
+              Recognized for contributing to an AI-assisted autonomous drone swarm coordination concept for disaster relief operations, focusing on simulation-based prototyping in Unreal Engine and technical presentation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-envelope"></i> Connect</span>
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-desc">Open to discussions regarding engineering internships, entry-level developer roles, and technical collaborations.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Email Card -->
+          <div class="contact-card">
+            <div>
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <h3>Email</h3>
+              <p id="email-address">arpandutta30@gmail.com</p>
+            </div>
+            <div class="contact-actions">
+              <a href="mailto:arpandutta30@gmail.com" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-paper-plane"></i> Send Email
+              </a>
+              <button type="button" class="btn btn-outline btn-sm" id="copy-email-btn" title="Copy email address to clipboard">
+                <i class="fa-solid fa-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+
+          <!-- LinkedIn Card -->
+          <div class="contact-card">
+            <div>
+              <div class="contact-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              <h3>LinkedIn</h3>
+              <p>linkedin.com/in/arpandutta30</p>
+            </div>
+            <div class="contact-actions">
+              <a href="https://www.linkedin.com/in/arpandutta30/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-linkedin-in"></i> View Profile
+              </a>
+            </div>
+          </div>
+
+          <!-- GitHub Card -->
+          <div class="contact-card">
+            <div>
+              <div class="contact-icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <h3>GitHub</h3>
+              <p>github.com/arpandutta30</p>
+            </div>
+            <div class="contact-actions">
+              <a href="https://github.com/arpandutta30" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <i class="fa-brands fa-github"></i> View Repos
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-
-  <footer>
-    <p>© 2025 Arpan Dutta | Portfolio</p>
+  <!-- Minimalist Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>© 2025–2026 <strong>Arpan Dutta</strong>. Built with HTML5, CSS3 & JavaScript.</p>
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
   </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="Scroll to top of page" title="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Live Toast Notification for Copy Action -->
+  <div id="toast-notice" class="toast-notice" role="alert" aria-live="polite">
+    <i class="fa-solid fa-check"></i>
+    <span id="toast-message">Email address copied to clipboard!</span>
+  </div>
+
+  <!-- JavaScript Client Engine -->
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>
